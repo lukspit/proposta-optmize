@@ -300,6 +300,8 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
 .inclui li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--ink-2); line-height: 1.4; }
 .inclui li .ic { width: 18px; height: 18px; color: var(--ok); margin-top: 1px; }
 .inclui li.nao .ic { color: var(--muted); }
+.opcao.unica { grid-template-columns: minmax(0,1fr) minmax(0,1.25fr); column-gap: 32px; align-items: center; padding: 28px; }
+.opcao.unica .inclui { border-top: 0; padding: 0 0 0 32px; border-left: 1px solid var(--line); }
 
 .regua { display: grid; gap: 18px; padding: 22px; }
 .regua h3 { font-size: 16px; font-weight: 700; }
@@ -346,7 +348,8 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
 
 @media (max-width: 960px) {
   .opcoes { grid-template-columns: minmax(0,1fr); }
-  .opcao.rec { order: -1; }
+  .opcao.unica { grid-template-columns: minmax(0,1fr); }
+  .opcao.unica .inclui { border-left: 0; padding: 18px 0 0; border-top: 1px solid var(--line); }
   .itens, .itens.quatro { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .pagto { grid-template-columns: minmax(0,1fr); gap: 20px; }
   .pagto::before { left: 13px; right: auto; top: 14px; bottom: 14px; width: 2px; height: auto; background: linear-gradient(180deg, var(--accent) 0 34%, var(--optimize) 34% 84%, var(--line) 84%); }
@@ -467,48 +470,34 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
 
   <section class="sec">
     <div class="cab">
-      <span class="k"><i><svg class="ic" style="width:14px;height:14px"><use href="#i-wallet"/></svg></i>Duas opções</span>
-      <h2>Escolhe como a gente segue depois da entrega.</h2>
+      <span class="k"><i><svg class="ic" style="width:14px;height:14px"><use href="#i-wallet"/></svg></i>A proposta</span>
+      <h2>Uma entrada menor e a máquina evoluindo depois da entrega.</h2>
     </div>
-    <div class="opcoes">
-      <article class="opcao">
-        <header><h3>Só a implementação</h3></header>
-        <div class="precos">
-          <div class="preco"><small>Implementação</small><strong>R$ 12.000</strong><span>em 2x de R$ 6.000</span></div>
-        </div>
-        <ul class="inclui">
-          <li><svg class="ic"><use href="#i-check"/></svg>Tudo do plano, pronto em 30 dias</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Treino de quem vai operar</li>
-          <li class="nao"><svg class="ic"><use href="#i-arrow-right"/></svg>Depois da entrega, a equipe de vocês segue sozinha</li>
-        </ul>
-      </article>
-      <article class="opcao rec">
-        <header><h3>Implementação + evolução</h3><span class="selo">A que eu recomendo</span></header>
-        <div class="precos">
-          <div class="preco"><small>Implementação</small><strong>R$ 7.500</strong><span>em 2x de R$ 3.750</span></div>
-          <div class="preco mais"><small>Evolução mensal</small><strong>R$ 1.500/mês</strong><span>a partir do 2º mês, por no mínimo 3 meses</span></div>
-        </div>
-        <ul class="inclui">
-          <li><svg class="ic"><use href="#i-check"/></svg>Tudo do plano, pronto em 30 dias</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Treino de quem vai operar</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Um formato novo ou evolução de formato por mês</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Reunião mensal olhando os dados com a análise da IA</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Ajustes, correções e suporte no WhatsApp</li>
-        </ul>
-      </article>
-    </div>
+    <article class="opcao rec unica">
+      <div class="precos">
+        <div class="preco"><small>Implementação</small><strong>R$ 7.500</strong><span>em 2x de R$ 3.750</span></div>
+        <div class="preco mais"><small>Evolução mensal</small><strong>R$ 1.500/mês</strong><span>a partir do 2º mês, por no mínimo 3 meses</span></div>
+      </div>
+      <ul class="inclui">
+        <li><svg class="ic"><use href="#i-check"/></svg>Tudo do plano, pronto em 30 dias</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Treino de quem vai operar</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Um formato novo ou evolução de formato por mês</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Reunião mensal olhando os dados com a análise da IA</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Ajustes, correções e suporte no WhatsApp</li>
+      </ul>
+    </article>
 
     <div class="janela">
       <div class="regua">
-        <p class="frase">Nos 4 primeiros meses, o mesmo valor. Na segunda opção, a máquina vem com <em>3 meses de evolução</em>.</p>
+        <p class="frase">Pelo mesmo valor que eu tinha falado, a máquina agora vem com <em>3 meses de evolução</em>.</p>
         <div class="linha-r">
-          <span>Só a implementação</span>
-          <div class="barra-r" aria-label="R$ 12.000 no primeiro mês"><i class="unico" style="flex: 12000">R$ 12.000</i></div>
+          <span>O que eu tinha falado</span>
+          <div class="barra-r" aria-label="Antes: R$ 12.000 só pela implementação"><i class="unico" style="flex: 12000">R$ 12.000</i></div>
           <b>R$ 12.000</b>
         </div>
         <div class="linha-r">
-          <span>Implementação + evolução</span>
-          <div class="barra-r" aria-label="R$ 7.500 no primeiro mês e R$ 1.500 nos meses 2, 3 e 4"><i class="impl" style="flex: 7500">R$ 7.500</i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i></div>
+          <span>A proposta agora</span>
+          <div class="barra-r" aria-label="Agora: R$ 7.500 de implementação e R$ 1.500 nos meses 2, 3 e 4"><i class="impl" style="flex: 7500">R$ 7.500</i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i></div>
           <b>R$ 12.000</b>
         </div>
         <div class="meses" aria-hidden="true">
@@ -516,7 +505,7 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
           <div><span style="flex: 7500">Mês 1</span><span style="flex: 1500"><span class="longo">Mês 2</span><span class="curto">M2</span></span><span style="flex: 1500"><span class="longo">Mês 3</span><span class="curto">M3</span></span><span style="flex: 1500"><span class="longo">Mês 4</span><span class="curto">M4</span></span></div>
           <span></span>
         </div>
-        <div class="legenda"><span style="--c: var(--accent)">Implementação</span><span style="--c: var(--optimize)">Evolução mensal</span></div>
+        <div class="legenda"><span style="--c: #3a4a7a">Só a implementação</span><span style="--c: var(--accent)">Implementação</span><span style="--c: var(--optimize)">Evolução mensal</span></div>
       </div>
     </div>
   </section>
@@ -554,7 +543,7 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
   <section class="sec">
     <div class="cab">
       <span class="k"><i><svg class="ic" style="width:14px;height:14px"><use href="#i-calendar-days"/></svg></i>Pagamento</span>
-      <h2>Como fica, na opção com evolução.</h2>
+      <h2>Como fica o pagamento.</h2>
     </div>
     <ol class="pagto">
       <li style="--c: var(--accent)"><span class="p"></span><b>Início</b><strong>R$ 3.750</strong><small>reunião de início</small></li>
@@ -564,7 +553,6 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
       <li style="--c: var(--optimize)"><span class="p"></span><b>Mês 4</b><strong>R$ 1.500</strong><small>evolução</small></li>
       <li class="depois" style="--c: var(--muted)"><span class="p"></span><b>Depois</b><strong>Mês a mês</strong><small>se fizer sentido</small></li>
     </ol>
-    <p class="obs"><svg class="ic"><use href="#i-wallet"/></svg><span>Na opção só implementação, são 2x de R$ 6.000: no início e na entrega.</span></p>
   </section>
 
   <section class="sec">
