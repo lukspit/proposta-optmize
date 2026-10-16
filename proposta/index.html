@@ -303,7 +303,7 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
 .opcao.unica { grid-template-columns: minmax(0,1fr) minmax(0,1.25fr); column-gap: 32px; align-items: center; padding: 28px; }
 .opcao.unica .inclui { border-top: 0; padding: 0 0 0 32px; border-left: 1px solid var(--line); }
 
-.regua { display: grid; gap: 18px; padding: 22px; }
+.regua { display: grid; gap: 12px; padding: 18px 22px; }
 .regua h3 { font-size: 16px; font-weight: 700; }
 .regua h3 small { display: block; font-weight: 500; font-size: 13px; color: var(--muted); margin-top: 2px; }
 .linha-r { display: grid; grid-template-columns: 170px minmax(0,1fr) 128px; gap: 14px; align-items: center; }
@@ -362,7 +362,7 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
 }
 @media (max-width: 600px) {
   .opcao { padding: 20px; }
-  .regua { padding: 16px; }
+  .regua { padding: 14px 16px; }
   .linha-r, .meses { grid-template-columns: minmax(0,1fr) 84px; gap: 6px 10px; }
   .longo { display: none; }
   .curto { display: inline; }
@@ -492,7 +492,6 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
 
     <div class="janela">
       <div class="regua">
-        <p class="frase">A entrada caiu de R$ 12.000 pra <em>R$ 7.500</em>, e a máquina vem com 2 meses de acompanhamento depois da entrega.</p>
         <div class="linha-r">
           <span>O que eu tinha falado</span>
           <div class="barra-r" aria-label="Antes: R$ 12.000 só pela implementação"><i class="unico" style="flex: 12000">R$ 12.000</i></div>
@@ -508,7 +507,6 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
           <div><span style="flex: 7500">Mês 1</span><span style="flex: 1500"><span class="longo">Mês 2</span><span class="curto">M2</span></span><span style="flex: 1500"><span class="longo">Mês 3</span><span class="curto">M3</span></span><span style="flex: 1500"></span></div>
           <span></span>
         </div>
-        <div class="legenda"><span style="--c: #3a4a7a">Só a implementação</span><span style="--c: var(--accent)">Implementação</span><span style="--c: var(--optimize)">Evolução mensal</span></div>
       </div>
     </div>
   </section>
