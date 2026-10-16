@@ -315,6 +315,7 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
 .barra-r .impl { background: var(--accent); }
 .barra-r .unico { background: #3a4a7a; }
 .barra-r .evo { background: var(--optimize); }
+.barra-r .vazio { background: transparent; border: 1px dashed var(--line); }
 .meses { display: grid; grid-template-columns: 170px minmax(0,1fr) 128px; gap: 14px; }
 .meses div { display: flex; gap: 2px; }
 .meses span { font-size: 12px; color: var(--muted); text-align: center; }
@@ -332,8 +333,8 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
 .obs .ic { color: var(--accent-2); margin-top: 3px; }
 .obs a { color: var(--accent-2); font-weight: 600; }
 
-.pagto { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); position: relative; }
-.pagto::before { content: ""; position: absolute; left: 8%; right: 8%; top: 13px; height: 2px; background: linear-gradient(90deg, var(--accent) 0 34%, var(--optimize) 34% 84%, var(--line) 84%); }
+.pagto { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); position: relative; }
+.pagto::before { content: ""; position: absolute; left: 8%; right: 8%; top: 13px; height: 2px; background: linear-gradient(90deg, var(--accent) 0 32%, var(--optimize) 32% 78%, var(--line) 78%); }
 .pagto li { display: grid; justify-items: center; text-align: center; gap: 6px; padding-inline: 6px; position: relative; }
 .pagto .p { width: 28px; height: 28px; border-radius: 50%; background: var(--bg); border: 2px solid var(--c); display: grid; place-items: center; }
 .pagto .p::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
@@ -352,7 +353,7 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
   .opcao.unica .inclui { border-left: 0; padding: 18px 0 0; border-top: 1px solid var(--line); }
   .itens, .itens.quatro { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .pagto { grid-template-columns: minmax(0,1fr); gap: 20px; }
-  .pagto::before { left: 13px; right: auto; top: 14px; bottom: 14px; width: 2px; height: auto; background: linear-gradient(180deg, var(--accent) 0 34%, var(--optimize) 34% 84%, var(--line) 84%); }
+  .pagto::before { left: 13px; right: auto; top: 14px; bottom: 14px; width: 2px; height: auto; background: linear-gradient(180deg, var(--accent) 0 32%, var(--optimize) 32% 78%, var(--line) 78%); }
   .pagto li { grid-template-columns: 28px auto 1fr; justify-items: start; text-align: left; column-gap: 14px; row-gap: 0; padding-inline: 0; align-items: center; }
   .pagto .p { grid-row: 1 / span 2; }
   .pagto b { grid-column: 2; }
@@ -478,7 +479,7 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
     <article class="opcao rec unica">
       <div class="precos">
         <div class="preco"><small>Implementação</small><strong>R$ 7.500</strong><span>em 2x de R$ 3.750</span></div>
-        <div class="preco mais"><small>Evolução mensal</small><strong>R$ 1.500/mês</strong><span>a partir do 2º mês, por no mínimo 3 meses</span></div>
+        <div class="preco mais"><small>Evolução mensal</small><strong>R$ 1.500/mês</strong><span>a partir do 2º mês, por no mínimo 2 meses</span></div>
       </div>
       <ul class="inclui">
         <li><svg class="ic"><use href="#i-check"/></svg>Tudo do plano, pronto em 30 dias</li>
@@ -491,7 +492,7 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
 
     <div class="janela">
       <div class="regua">
-        <p class="frase">Pelo mesmo valor que eu tinha falado, a máquina agora vem com <em>3 meses de evolução</em>.</p>
+        <p class="frase">A entrada caiu de R$ 12.000 pra <em>R$ 7.500</em>, e a máquina vem com 2 meses de acompanhamento depois da entrega.</p>
         <div class="linha-r">
           <span>O que eu tinha falado</span>
           <div class="barra-r" aria-label="Antes: R$ 12.000 só pela implementação"><i class="unico" style="flex: 12000">R$ 12.000</i></div>
@@ -499,12 +500,12 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
         </div>
         <div class="linha-r">
           <span>A proposta agora</span>
-          <div class="barra-r" aria-label="Agora: R$ 7.500 de implementação e R$ 1.500 nos meses 2, 3 e 4"><i class="impl" style="flex: 7500">R$ 7.500</i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i></div>
-          <b>R$ 12.000</b>
+          <div class="barra-r" aria-label="Agora: R$ 7.500 de implementação e R$ 1.500 nos meses 2 e 3"><i class="impl" style="flex: 7500">R$ 7.500</i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i><i class="evo" style="flex: 1500"><span class="longo">1.500</span><span class="curto">1,5</span></i><i class="vazio" style="flex: 1500"></i></div>
+          <b>R$ 10.500</b>
         </div>
         <div class="meses" aria-hidden="true">
           <span></span>
-          <div><span style="flex: 7500">Mês 1</span><span style="flex: 1500"><span class="longo">Mês 2</span><span class="curto">M2</span></span><span style="flex: 1500"><span class="longo">Mês 3</span><span class="curto">M3</span></span><span style="flex: 1500"><span class="longo">Mês 4</span><span class="curto">M4</span></span></div>
+          <div><span style="flex: 7500">Mês 1</span><span style="flex: 1500"><span class="longo">Mês 2</span><span class="curto">M2</span></span><span style="flex: 1500"><span class="longo">Mês 3</span><span class="curto">M3</span></span><span style="flex: 1500"></span></div>
           <span></span>
         </div>
         <div class="legenda"><span style="--c: #3a4a7a">Só a implementação</span><span style="--c: var(--accent)">Implementação</span><span style="--c: var(--optimize)">Evolução mensal</span></div>
@@ -539,7 +540,7 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
       <div class="item"><svg class="ic"><use href="#i-wrench"/></svg><strong>Melhorias quando pedirem</strong><p>Precisou ajustar ou melhorar algo que já existe, é só pedir.</p></div>
       <div class="item"><svg class="ic"><use href="#i-message-circle"/></svg><strong>Suporte direto</strong><p>WhatsApp comigo.</p></div>
     </div>
-    <p class="obs"><svg class="ic"><use href="#i-users"/></svg><span>A equipe de vocês opera a plataforma no dia a dia. Projeto novo, como outro perfil ou outro produto, a gente conversa à parte. Depois dos 3 meses, segue mês a mês enquanto fizer sentido pra vocês.</span></p>
+    <p class="obs"><svg class="ic"><use href="#i-users"/></svg><span>A equipe de vocês opera a plataforma no dia a dia. Projeto novo, como outro perfil ou outro produto, a gente conversa à parte. Depois dos 2 meses, segue mês a mês enquanto fizer sentido pra vocês.</span></p>
   </section>
 
   <section class="sec">
@@ -552,7 +553,6 @@ h1, h2 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; le
       <li style="--c: var(--accent)"><span class="p"></span><b>Dia 30</b><strong>R$ 3.750</strong><small>entrega</small></li>
       <li style="--c: var(--optimize)"><span class="p"></span><b>Mês 2</b><strong>R$ 1.500</strong><small>evolução</small></li>
       <li style="--c: var(--optimize)"><span class="p"></span><b>Mês 3</b><strong>R$ 1.500</strong><small>evolução</small></li>
-      <li style="--c: var(--optimize)"><span class="p"></span><b>Mês 4</b><strong>R$ 1.500</strong><small>evolução</small></li>
       <li class="depois" style="--c: var(--muted)"><span class="p"></span><b>Depois</b><strong>Mês a mês</strong><small>se fizer sentido</small></li>
     </ol>
   </section>
